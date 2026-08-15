@@ -18,7 +18,6 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public StudentResponse getStudentById(Long id) {
-
         Student student = studentRepository.findById(id)
                 .orElseThrow(() ->
                         new RuntimeException("Student not found with id: " + id)
@@ -46,28 +45,20 @@ public class StudentServiceImpl implements StudentService {
         }
 
         Student student = new Student();
-
         student.setName(request.getName());
         student.setEmail(request.getEmail());
         student.setAge(request.getAge());
         student.setCourse(request.getCourse());
         student.setDepartmentId(request.getDepartmentId());
-
         LocalDateTime now = LocalDateTime.now();
-
         student.setCreatedAt(now);
         student.setUpdatedAt(now);
-
         Student savedStudent = studentRepository.save(student);
-
         return mapToResponse(savedStudent);
     }
 
     @Override
-    public StudentResponse updateStudent(
-            Long id,
-            StudentRequest request) {
-
+    public StudentResponse updateStudent(Long id,StudentRequest request) {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() ->
                         new RuntimeException(
@@ -80,29 +71,23 @@ public class StudentServiceImpl implements StudentService {
         student.setAge(request.getAge());
         student.setCourse(request.getCourse());
         student.setDepartmentId(request.getDepartmentId());
-
         student.setUpdatedAt(LocalDateTime.now());
-
-        Student updatedStudent =
-                studentRepository.save(student);
-
+        Student updatedStudent = studentRepository.save(student);
         return mapToResponse(updatedStudent);
     }
 
     @Override
     public void deleteStudent(Long id) {
-
         if (!studentRepository.existsById(id)) {
             throw new RuntimeException(
                     "Student not found with id: " + id
             );
         }
-
         studentRepository.deleteById(id);
     }
 
+    // ENTITY -> DTO | Phase 2 => Use Transformer | Phase3 => Mapper (3rd Party Library)
     private StudentResponse mapToResponse(Student student) {
-
         return StudentResponse.builder()
                 .studentId(student.getStudentId())
                 .name(student.getName())
