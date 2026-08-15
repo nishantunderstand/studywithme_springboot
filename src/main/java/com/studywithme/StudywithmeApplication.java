@@ -1,4 +1,4 @@
-package com.nishantraj.studywithme;
+package com.studywithme;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
