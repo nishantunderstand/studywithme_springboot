@@ -16,20 +16,13 @@ public class StudentService {
 
     private final StudentRepository studentRepository;
 
-    // Do i need to make them public ?
-    // Is it necessary ???
-
-
     // GET /students/{id}
     // 1. Setter Approach
     public StudentResponse getStudentById(Long id) {
-
         Student student = studentRepository.findById(id)
-                .orElseThrow(() ->
-                        new RuntimeException("Student not found with id: " + id));
+                .orElseThrow(() ->new RuntimeException("Student not found with id: " + id));
 
         StudentResponse response = new StudentResponse();
-
         response.setStudentId(student.getStudentId());
         response.setName(student.getName());
         response.setEmail(student.getEmail());
@@ -49,8 +42,7 @@ public class StudentService {
     public StudentResponse getStudentById_BuilderDP(Long id) {
 
         Student student = studentRepository.findById(id)
-                .orElseThrow(() ->
-                        new RuntimeException("Student not found with id: " + id));
+                .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
 
         StudentResponse response = StudentResponse.builder()
                 .studentId(student.getStudentId())

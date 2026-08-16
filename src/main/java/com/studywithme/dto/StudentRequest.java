@@ -4,6 +4,8 @@ import lombok.*;
 
 // For DTOs, many developers prefer
 // because it is explicit and avoids generating unnecessary methods like equals(), hashCode(), and toString() when they are not needed.
+
+
 @Getter
 @Setter
 @NoArgsConstructor
