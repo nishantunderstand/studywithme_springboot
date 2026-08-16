@@ -15,6 +15,7 @@ import java.util.List;
 public class StudentService {
 
     private final StudentRepository studentRepository;
+
     // GET /students/{id}
     public StudentResponse getStudentById(Long id) {
         Student student = studentRepository.findById(id)
