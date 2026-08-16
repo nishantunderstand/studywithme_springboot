@@ -7,6 +7,7 @@ import com.studywithme.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,24 +15,29 @@ import java.util.List;
 public class StudentService {
 
     private final StudentRepository studentRepository;
-
     // GET /students/{id}
     public StudentResponse getStudentById(Long id) {
-
         Student student = studentRepository.findById(id)
-                .orElseThrow(() ->
-                        new RuntimeException("Student not found with id: " + id));
-
-        return mapToResponse(student);
+                .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
+        StudentResponse response = new StudentResponse();
+        response.setStudentId(student.getStudentId());
+        response.setName(student.getName());
+        response.setEmail(student.getEmail());
+        return response;
     }
 
     // GET /students
     public List<StudentResponse> getAllStudents() {
-
-        return studentRepository.findAll()
-                .stream()
-                .map(this::mapToResponse)
-                .toList();
+        List<Student> students = studentRepository.findAll();
+        List<StudentResponse> responses = new ArrayList<>();
+        for (Student student : students) {
+            StudentResponse response = new StudentResponse();
+            response.setStudentId(student.getStudentId());
+            response.setName(student.getName());
+            response.setEmail(student.getEmail());
+            responses.add(response);
+        }
+        return responses;
     }
 
     // POST /students
@@ -41,44 +47,33 @@ public class StudentService {
                 .name(request.getName())
                 .email(request.getEmail())
                 .build();
-
         Student savedStudent = studentRepository.save(student);
-
-        return mapToResponse(savedStudent);
+        StudentResponse response = new StudentResponse();
+        response.setStudentId(savedStudent.getStudentId());
+        response.setName(savedStudent.getName());
+        response.setEmail(savedStudent.getEmail());
+        return response;
     }
 
     // PUT /students/{id}
     public StudentResponse updateStudent(Long id, StudentRequest request) {
 
         Student student = studentRepository.findById(id)
-                .orElseThrow(() ->
-                        new RuntimeException("Student not found with id: " + id));
-
+                .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
         student.setName(request.getName());
         student.setEmail(request.getEmail());
-
         Student updatedStudent = studentRepository.save(student);
-
-        return mapToResponse(updatedStudent);
+        StudentResponse response = new StudentResponse();
+        response.setStudentId(updatedStudent.getStudentId());
+        response.setName(updatedStudent.getName());
+        response.setEmail(updatedStudent.getEmail());
+        return response;
     }
 
     // DELETE /students/{id}
     public void deleteStudent(Long id) {
-
         Student student = studentRepository.findById(id)
-                .orElseThrow(() ->
-                        new RuntimeException("Student not found with id: " + id));
-
+                .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
         studentRepository.delete(student);
-    }
-
-    // Entity → Response DTO
-    private StudentResponse mapToResponse(Student student) {
-
-        return StudentResponse.builder()
-                .studentId(student.getStudentId())
-                .name(student.getName())
-                .email(student.getEmail())
-                .build();
     }
 }
