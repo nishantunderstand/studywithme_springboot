@@ -65,7 +65,8 @@ public class StudentService {
         List<Student> students = studentRepository.findAll();
         List<StudentResponse> responses = new ArrayList<>();
         for (Student student : students) {
-            StudentResponse response = new StudentResponse();
+            StudentResponse response = new StudentResponse(); //<--
+
             response.setStudentId(student.getStudentId());
             response.setName(student.getName());
             response.setEmail(student.getEmail());
@@ -74,7 +75,8 @@ public class StudentService {
             response.setDepartmentId(student.getDepartmentId());
             response.setCreatedAt(student.getCreatedAt());
             response.setUpdatedAt(student.getUpdatedAt());
-            responses.add(response);
+
+            responses.add(response); //<--
         }
         return responses;
     }
