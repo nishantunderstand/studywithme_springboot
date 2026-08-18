@@ -1,18 +1,34 @@
 This is Level 1, Beginner Level Code
 
+
+Project Structure Tree
+
+
 ```
 ├── controller
 │   └── StudentController.java
+│
 ├── service
 │   └── StudentService.java
+│
 ├── repository
 │   └── StudentRepository.java
+│
 ├── dto
 │   └── student
 │       ├── StudentRequest.java
 │       └── StudentResponse.java
+│
 └── entity
     └── Student.java
+        ├── studentId
+        ├── name
+        ├── email
+        ├── age
+        ├── course
+        ├── departmentId
+        ├── createdAt
+        └── updatedAt    
 
 ```
 
