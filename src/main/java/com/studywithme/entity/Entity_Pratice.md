@@ -1,25 +1,26 @@
+StudentEntity.java
+
+
 @Entity
-@Table
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
+@Table(name="students")
 @Getter
 @Setter
+@RequiredArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Student{
 
-@Id
-@GenertatedValue(strategy=GenerationType.IDENTITY)
-@Column(name="student_id")
+@Id 
+@GeneratedValue(strategy = GenerationType.AUTO)
 private Long id;
 
+@Column(name="fullName")
+private String name;
 
-@Column(name="firstName", nullable=true,unique=true,length=150)
+@Column(name="first_name" , nullable = true, unique= true)
 private String fname;
 
-@Column(name="lastName)
-private String lname;
 
+private LocalDateTime createdDate;
+private LocalDateTime modifiedDate;
 }
----
-@Id
-@GeneratedValue(strategy=GenerationType.IDENTITY)

@@ -1,8 +1,13 @@
+GET-1
+GET-ALL
+POST
+PUT
+DELETE
+
+---
+
 This is Level 1, Beginner Level Code
-
-
 Project Structure Tree
-
 
 ```
 ├── controller
@@ -32,13 +37,10 @@ Project Structure Tree
 
 ```
 
-
 TODO :
 1. Write Code to Interface 
 2. Jarkata Validation to DTO
 3. Lombok -> Record Class
-
-
 
 TODO Design Pattern
 1. Facade DP
