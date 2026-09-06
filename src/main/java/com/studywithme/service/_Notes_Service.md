@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 Sure. These are the **common `JpaRepository` methods** and their return types.
 
 | Method           | Return Type         | Meaning                             |

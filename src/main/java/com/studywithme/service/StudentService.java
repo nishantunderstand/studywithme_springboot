@@ -19,9 +19,17 @@ public class StudentService {
     // GET /students/{id}
     // 1. Setter Approach
     public StudentResponse getStudentById(Long id) {
+
+        // 1. Get Student from DB
         Student student = studentRepository.findById(id)
                 .orElseThrow(() ->new RuntimeException("Student not found with id: " + id));
 
+        // orElse
+        // orElseThrow
+        // Do we have 2 types of overlaoded Stream
+
+
+        // 2. Convert Entity -> Response DTO
         StudentResponse response = new StudentResponse();
         response.setStudentId(student.getStudentId());
         response.setName(student.getName());
@@ -32,43 +40,18 @@ public class StudentService {
         response.setCreatedAt(student.getCreatedAt());
         response.setUpdatedAt(student.getUpdatedAt());
 
+        // 3. Return Response DTO
         return response;
     }
 
-
-
-    // GET /students/{id}
-    // Apprach 2 : Builder Design Pattern
-    public StudentResponse getStudentById_BuilderDP(Long id) {
-
-        Student student = studentRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
-
-        StudentResponse response = StudentResponse.builder()
-                .studentId(student.getStudentId())
-                .name(student.getName())
-                .email(student.getEmail())
-                .age(student.getAge())
-                .course(student.getCourse())
-                .departmentId(student.getDepartmentId())
-                .createdAt(student.getCreatedAt())
-                .updatedAt(student.getUpdatedAt())
-                .build();
-
-        return response;
-    }
-
-    // =======================================================================================
-    // =======================================================================================
-    // =======================================================================================
-    // =======================================================================================
-    // =======================================================================================
 
 
     // GET /students
     public List<StudentResponse> getAllStudents() {
         List<Student> students = studentRepository.findAll();
+
         List<StudentResponse> responses = new ArrayList<>();
+
         for (Student student : students) {
             StudentResponse response = new StudentResponse(); //<--
 
@@ -87,82 +70,36 @@ public class StudentService {
     }
 
 
-
-    // GET /students
-    public List<StudentResponse> getAllStudents_StreamApproach() {
-        return studentRepository.findAll()
-                .stream()
-                .map(student -> {
-                    StudentResponse response = new StudentResponse();
-                    response.setStudentId(student.getStudentId());
-                    response.setName(student.getName());
-                    response.setEmail(student.getEmail());
-                    response.setAge(student.getAge());
-                    response.setCourse(student.getCourse());
-                    response.setDepartmentId(student.getDepartmentId());
-                    response.setCreatedAt(student.getCreatedAt());
-                    response.setUpdatedAt(student.getUpdatedAt());
-                    return response;
-                })
-                .toList();
-    }
-
-    public List<StudentResponse> getAllStudents_Builder() {
-        return studentRepository.findAll()
-                .stream()
-                .map(student -> StudentResponse.builder()
-                        .studentId(student.getStudentId())
-                        .name(student.getName())
-                        .email(student.getEmail())
-                        .age(student.getAge())
-                        .course(student.getCourse())
-                        .departmentId(student.getDepartmentId())
-                        .createdAt(student.getCreatedAt())
-                        .updatedAt(student.getUpdatedAt())
-                        .build())
-                .toList();
-    }
-
-
-
-    // =======================================================================================
-    // =======================================================================================
-    // =======================================================================================
-    // =======================================================================================
-    // =======================================================================================
-
-
-    // POST /students
+   // POST /students
     public StudentResponse createStudent(StudentRequest request) {
 
-        Student student = Student.builder()
-                .name(request.getName())
-                .email(request.getEmail())
-                .build();
+        Student student = new Student();
+        student.setName(request.getName());
+        student.setEmail(request.getEmail());
+
         Student savedStudent = studentRepository.save(student);
+
         StudentResponse response = new StudentResponse();
         response.setStudentId(savedStudent.getStudentId());
         response.setName(savedStudent.getName());
         response.setEmail(savedStudent.getEmail());
+
         return response;
     }
 
-
-    // =======================================================================================
-    // =======================================================================================
-    // =======================================================================================
-    // =======================================================================================
-    // =======================================================================================
 
     // PUT /students/{id}
     public StudentResponse updateStudent(Long id, StudentRequest request) {
 
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
+
         student.setName(request.getName());
         student.setEmail(request.getEmail());
+
         Student updatedStudent = studentRepository.save(student);
         StudentResponse response = new StudentResponse();
+
         response.setStudentId(updatedStudent.getStudentId());
         response.setName(updatedStudent.getName());
         response.setEmail(updatedStudent.getEmail());
@@ -171,11 +108,6 @@ public class StudentService {
 
 
 
-    // =======================================================================================
-    // =======================================================================================
-    // =======================================================================================
-    // =======================================================================================
-    // =======================================================================================
 
 
     // DELETE /students/{id}
@@ -183,5 +115,41 @@ public class StudentService {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
         studentRepository.delete(student);
+    }
+
+
+
+
+    // PATCH /students/{id}
+    public StudentResponse patchStudent(Long id, StudentRequest request) {
+
+        Student student = studentRepository.findById(id)
+                .orElseThrow(() ->
+                        new RuntimeException("Student not found with id: " + id));
+
+        // Partial Update
+        if (request.getName() != null) {
+            student.setName(request.getName());
+        }
+
+        if (request.getEmail() != null) {
+            student.setEmail(request.getEmail());
+        }
+
+        Student updatedStudent = studentRepository.save(student);
+
+        // Create Response
+        StudentResponse response = new StudentResponse();
+
+        response.setStudentId(updatedStudent.getStudentId());
+        response.setName(updatedStudent.getName());
+        response.setEmail(updatedStudent.getEmail());
+        response.setAge(updatedStudent.getAge());
+        response.setCourse(updatedStudent.getCourse());
+        response.setDepartmentId(updatedStudent.getDepartmentId());
+        response.setCreatedAt(updatedStudent.getCreatedAt());
+        response.setUpdatedAt(updatedStudent.getUpdatedAt());
+
+        return response;
     }
 }

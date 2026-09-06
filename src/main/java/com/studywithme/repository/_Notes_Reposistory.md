@@ -32,5 +32,4 @@ studentRepository.count();
 studentRepository.deleteById(1L);
 ```
 
-
 The main design pattern involved is Proxy Pattern.

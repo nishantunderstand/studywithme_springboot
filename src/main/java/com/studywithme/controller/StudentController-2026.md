@@ -70,4 +70,12 @@ public class StudentController {
 
         return ResponseEntity.noContent().build();
     }
+
+
+    @PostMapping
+    public ResponseEntity<StudentResponse> createStudent(@RequestBody StudentRequest request) { //<--
+        StudentResponse response = studentService.createStudent(request); //<--
+        return ResponseEntity.status(HttpStatus.CREATED).body(response); //<--
+    }
+
 }
