@@ -1,12 +1,22 @@
-Saturday, August 15, 2026 7:58:48 PM
+studywithme
+│
+├── controller
+│   └── StudentController.java
+│
+├── dto
+│   └── StudentResponseDTO.java
+│
+├── entity
+│   └── StudentEntity.java
+│
+├── repository
+│   └── StudentRepository.java
+│
+├── service
+│   └── StudentService.java
+│
+└── StudywithmeApplication.java
 
-### Different Level Of Implementation
- 
-- [level1](https://github.com/nishantunderstand/studywithme_springboot/tree/level1)
-- [level2] : TODO 
 
-
---
-
-- Your goal is to have all the information in you head while drafting the code.
-- So practice Daily...
+Only Get By Id 
+Use InMemory H2
