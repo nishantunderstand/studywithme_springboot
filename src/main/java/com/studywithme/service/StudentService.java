@@ -16,11 +16,15 @@ public class StudentService {
         StudentEntity student = studentReposistory.findById(id)
                 .orElseThrow(()-> new RuntimeException("Student Doesn't Exisit"));
 
-        return new StudentResponseDTO(
-                student.getId(),
-                student.getName(),
-                student.getEmail(),
-                student.getCourse()
-        );
+        // Traditional Approach
+        StudentResponseDTO studentResponseDTO = new StudentResponseDTO();
+        studentResponseDTO.setId(student.getId());
+        studentResponseDTO.setName(student.getName());
+        studentResponseDTO.setEmail(student.getEmail());
+        studentResponseDTO.setCourse(student.getCourse());
+        return studentResponseDTO;
+
+
+
     }
 }

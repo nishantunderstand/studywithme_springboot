@@ -89,9 +89,7 @@
             <artifactId>spring-boot-h2console</artifactId>
         </dependency>
 
-
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
