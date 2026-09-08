@@ -13,18 +13,32 @@ public class StudentService {
     private final StudentRepository studentReposistory;
 
     public StudentResponseDTO getStudentById(Long id) {
-        StudentEntity student = studentReposistory.findById(id)
+        StudentEntity students = studentReposistory.findById(id)
                 .orElseThrow(()-> new RuntimeException("Student Doesn't Exisit"));
 
-        // Traditional Approach
-        StudentResponseDTO studentResponseDTO = new StudentResponseDTO();
-        studentResponseDTO.setId(student.getId());
-        studentResponseDTO.setName(student.getName());
-        studentResponseDTO.setEmail(student.getEmail());
-        studentResponseDTO.setCourse(student.getCourse());
-        return studentResponseDTO;
+        // Traditional Based Approach
+//        StudentResponseDTO studentResponseDTO = new StudentResponseDTO();
+//        studentResponseDTO.setId(students.getId());
+//        studentResponseDTO.setName(students.getName());
+//        studentResponseDTO.setEmail(students.getEmail());
+//        studentResponseDTO.setCourse(students.getCourse());
+//        return studentResponseDTO;
 
+//        // Constructor Based Approach
+//        return new StudentResponseDTO(
+//                students.getId(),
+//                students.getName(),
+//                students.getEmail(),
+//                students.getCourse()
+//        );
 
+        // Builder Design Pattern
+        return StudentResponseDTO.builder()
+                .id(students.getId())
+                .name(students.getName())
+                .email(students.getEmail())
+                .course(students.getCourse())
+                .build();
 
     }
 }
