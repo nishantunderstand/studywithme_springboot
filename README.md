@@ -16,7 +16,3 @@ studywithme
 │   └── StudentService.java
 │
 └── StudywithmeApplication.java
-
-
-Only Get By Id 
-Use InMemory H2

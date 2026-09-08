@@ -1,6 +1,5 @@
 package com.studywithme.controller;
 
-
 import com.studywithme.dto.StudentResponseDTO;
 import com.studywithme.service.StudentService;
 import lombok.RequiredArgsConstructor;
@@ -10,8 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
-@RequestMapping("/v1/student")
+@RequestMapping("/api/students")
 @RequiredArgsConstructor
 public class StudentController {
     private final StudentService studentService;
