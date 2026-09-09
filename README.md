@@ -18,3 +18,17 @@ studywithme
 │   └── StudentService.java
 │
 └── StudywithmeApplication.java
+
+
+---
+
+H2 Database
+
+StudentEntity
+Long id;
+String name;
+String email;
+String course;
+
+
+Lombok 

@@ -11,9 +11,7 @@ User user = new User()
 .withEmail("alice@example.com")
 .withAge(25);
 
-
-
-
+   
 3. Builder Pattern
 StudentEntity student = StudentEntity.builder()
 .name("Nishant")
