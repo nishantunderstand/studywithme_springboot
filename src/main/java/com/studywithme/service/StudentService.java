@@ -16,29 +16,23 @@ public class StudentService {
         StudentEntity students = studentReposistory.findById(id)
                 .orElseThrow(()-> new RuntimeException("Student Doesn't Exisit"));
 
-        // Traditional Based Approach
-//        StudentResponseDTO studentResponseDTO = new StudentResponseDTO();
-//        studentResponseDTO.setId(students.getId());
-//        studentResponseDTO.setName(students.getName());
-//        studentResponseDTO.setEmail(students.getEmail());
-//        studentResponseDTO.setCourse(students.getCourse());
-//        return studentResponseDTO;
+        // Entity -> DTO
+        // Setter Based Approach : FAILED
+        // Builder Based Approach :
+        // Constructor Based Approach
 
-//        // Constructor Based Approach
-//        return new StudentResponseDTO(
-//                students.getId(),
-//                students.getName(),
-//                students.getEmail(),
-//                students.getCourse()
-//        );
-
-        // Builder Design Pattern
-        return StudentResponseDTO.builder()
-                .id(students.getId())
-                .name(students.getName())
-                .email(students.getEmail())
-                .course(students.getCourse())
-                .build();
-
+        // Constructor Based Approach
+        return new StudentResponseDTO(
+                students.getId(),
+                students.getName(),
+                students.getEmail(),
+                students.getCourse()
+        );
     }
 }
+
+
+/**
+ * StudentEntity → student.getName()
+ * DTO/record    → dto.name()
+ */
