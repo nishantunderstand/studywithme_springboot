@@ -1,3 +1,11 @@
+Version 1.5 CRUD + Lombok
+
+Enity -> DTO 
+Setter 
+Constructor
+Builder
+
+
 Project Structure
 ```
 studywithme
