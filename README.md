@@ -1,5 +1,5 @@
 Project Structure
-
+```
 studywithme
 │
 ├── controller
@@ -18,7 +18,7 @@ studywithme
 │   └── StudentService.java
 │
 └── StudywithmeApplication.java
-
+```
 
 ---
 
