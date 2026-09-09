@@ -1,12 +1,5 @@
-GET-1
-GET-ALL
-POST
-PUT
-DELETE
+Level 1 : Beginner Level Code
 
----
-
-This is Level 1, Beginner Level Code
 Project Structure Tree
 
 ```
@@ -45,6 +38,17 @@ TODO :
 TODO Design Pattern
 1. Facade DP
 2. Builde DP
+
+
+# Operation
+1. GET-1
+2. GET-ALL
+3. POST
+4. PUT
+5. PATCH
+5. DELETE
+
+
 
 ---
 ![SpringBootProject-Level-1.excalidraw.png](SpringBootProject-Level-1.excalidraw.png)
