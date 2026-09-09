@@ -56,8 +56,42 @@ SELECT * FROM students;
 
 
 
-Wednesday, September 9, 2026 4:27:12 PM
 
+
+Wednesday, September 9, 2026 4:27:12 PM
 http://localhost:8080
 http://localhost:8080/h2-console
 Both are two different thing.
+
+
+Git Worktree
+https://www.youtube.com/watch?v=grAsFn5yvjA
+Suppose You want to switch from branch 1 to 2
+with commit or stash
+then you can use worktree
+Little complicated to understand.
+
+
+How to use in Intellij 🤔🤔🤔  
+
+
+
+
+Learn Code With Durgesh
+https://www.youtube.com/watch?v=y9NhIWN9ZK8
+
+
+
+
+---
+
+
+which is responsible for authorization ?
+Who is responsible in spring ?
+
+
+
+When we pass username and password 
+who is responsible for this ?
+
+
