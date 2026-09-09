@@ -1,6 +1,6 @@
-Project Structure
-1.7 : Spring Security 
+Version 1.7 : Spring Security
 
+Project Structure
 ```
 studywithme
 │
@@ -26,7 +26,6 @@ studywithme
 │       └── passwordEncoder()
 │
 └── StudywithmeApplication.java
-
 ```
 
 
@@ -46,9 +45,6 @@ Lombok
 
 
 
-
-
-
 # H2 Default Values
 INSERT INTO students (name, email, course)
 VALUES ('Nishant Raj', 'nishant@gmail.com', 'Java');
@@ -57,7 +53,6 @@ INSERT INTO students (name, email, course)
 VALUES ('Rahul Sharma', 'rahul@gmail.com', 'Spring Boot');
 
 SELECT * FROM students;
-
 
 
 
