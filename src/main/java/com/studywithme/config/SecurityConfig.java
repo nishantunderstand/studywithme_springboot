@@ -12,33 +12,45 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
-import static org.apache.catalina.webresources.TomcatURLStreamHandlerFactory.disable;
 
 @Configuration
 @EnableMethodSecurity
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-        http.csrf(csrf->disable())
-                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
+        http
+                .csrf(csrf -> csrf.disable())
+
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/h2-console/**").permitAll()
+                        .anyRequest().authenticated()
+                )
+
+                .headers(headers ->
+                        headers.frameOptions(frame -> frame.disable())
+                )
+
                 .httpBasic(Customizer.withDefaults());
-                return http.build();
+
+        return http.build();
     }
 
     @Bean
-    public UserDetailsService userDetailService(PasswordEncoder passwordEncoder){
+    public UserDetailsService userDetailService(PasswordEncoder passwordEncoder) {
+
         UserDetails user = User.builder()
                 .username("nishant")
                 .password(passwordEncoder.encode("password"))
                 .roles("USER")
                 .build();
+
         return new InMemoryUserDetailsManager(user);
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }
-

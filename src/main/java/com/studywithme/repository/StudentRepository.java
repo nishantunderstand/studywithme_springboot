@@ -1,4 +1,4 @@
-package com.studywithme.reposistory;
+package com.studywithme.repository;
 
 import com.studywithme.entity.StudentEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public interface StudentReposistory extends JpaRepository<StudentEntity,Long> {
+public interface StudentRepository extends JpaRepository<StudentEntity,Long> {
 }
