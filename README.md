@@ -1,9 +1,13 @@
-Version 1.5 CRUD + Lombok
+Version 1.5 CRUD + Lombok + H2 Database
 
-Enity -> DTO 
-Setter 
-Constructor
-Builder
+Same as Version 1.0
+Just Cleaned
+Skip and Jump to next Version
+
+- Enity -> DTO 
+1. Setter 
+2. Constructor
+3. Builder
 
 
 Project Structure

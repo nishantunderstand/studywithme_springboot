@@ -16,13 +16,14 @@ public class StudentService {
         StudentEntity students = studentReposistory.findById(id)
                 .orElseThrow(()-> new RuntimeException("Student Doesn't Exisit"));
 
-        // Traditional Based Approach
+        // Setter Based Approach
 //        StudentResponseDTO studentResponseDTO = new StudentResponseDTO();
 //        studentResponseDTO.setId(students.getId());
 //        studentResponseDTO.setName(students.getName());
 //        studentResponseDTO.setEmail(students.getEmail());
 //        studentResponseDTO.setCourse(students.getCourse());
 //        return studentResponseDTO;
+
 
 //        // Constructor Based Approach
 //        return new StudentResponseDTO(
