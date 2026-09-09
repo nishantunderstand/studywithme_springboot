@@ -9,4 +9,4 @@ Saturday, August 15, 2026 7:58:48 PM
 --
 
 - Your goal is to have all the information in you head while drafting the code.
-- So practice Daily...
+- So practice Daily
