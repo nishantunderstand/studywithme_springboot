@@ -1,7 +1,6 @@
-Version 1.6
-Removing Lombok Shifting to Record Class
+Version 1.6 :Removing Lombok Shifting to Record Class
 
-Project Structure
+Project Structure 
 ```
 studywithme
 │
