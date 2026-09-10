@@ -3,6 +3,48 @@ CRUD + MySystem MySQL Setup
 
 Project Structure Tree
 
+
+```
+├── controller
+│   └── StudentController.java
+│
+├── service
+│   └── StudentService.java
+│
+├── repository
+│   └── StudentRepository.java
+│
+├── dto
+│   └── student
+│       ├── StudentRequest.java
+│       └── StudentResponse.java
+│
+└── entity
+    └── Student.java
+```
+
+```uml
+@startuml
+
+class StudentController
+class StudentService
+interface StudentRepository
+class Student
+class StudentRequest
+class StudentResponse
+
+StudentController ..> StudentService : uses
+StudentService ..> StudentRepository : uses
+StudentService ..> Student : uses
+StudentService ..> StudentRequest : uses
+StudentService ..> StudentResponse : uses
+
+@enduml
+```
+
+
+
+
 ```
 ├── controller
 │   └── StudentController.java
@@ -28,8 +70,15 @@ Project Structure Tree
         ├── departmentId
         ├── createdAt
         └── updatedAt    
-
 ```
+
+
+
+
+
+
+
+
 
 TODO :
 1. Write Code to Interface 
@@ -38,16 +87,15 @@ TODO :
 
 TODO Design Pattern
 1. Facade DP
-2. Builde DP
-
+2. Builder DP
 
 # Operation
 1. GET-1
 2. GET-ALL
 3. POST
 4. PUT
-5. PATCH
-5. DELETE
+5. PATCH 
+6. DELETE
 
 
 
