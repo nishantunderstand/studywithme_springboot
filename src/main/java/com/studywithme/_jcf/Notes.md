@@ -70,4 +70,3 @@ List
 │
 ├── sort(comparator)
 └── reversed()              // Java 21+
-
