@@ -1,4 +1,4 @@
-package java.jcf_ArrayList_Sorting_Comparator;
+package study.jcf_ArrayList_Sorting_Comparator;
 
 import java.util.*;
 /**
