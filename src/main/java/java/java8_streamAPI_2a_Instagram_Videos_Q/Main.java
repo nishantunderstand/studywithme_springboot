@@ -2,7 +2,6 @@ package java.java8_streamAPI_2a_Instagram_Videos_Q;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 class Person {
@@ -14,13 +13,6 @@ class Person {
         this.age = age;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
 }
 
 public class Main {
@@ -39,30 +31,7 @@ public class Main {
 
         // 1. Filter out People Younger than 18
         // 2. Extract there Name
-        List<String> res1  = people.stream().
-                        filter(p->p.getAge()>=18)
-                        .map(Person::getName)
-                        .collect(Collectors.toList());
-
         // Converts names to uppercase
-        List<String> res2 = people.stream().
-                filter(p->p.getAge()>=18)
-                .map(Person::getName)
-                .map(String::toUpperCase)
-                .collect(Collectors.toList());
-
         // Sort it Lexiographically
-
-        List<String> res  = people.stream().
-                filter(p->p.getAge()>=18)
-                .map(Person::getName)
-                .map(String::toUpperCase)
-                .sorted()
-                .collect(Collectors.toList());
-
-
-        System.out.println(res);
-
-
     }
 }

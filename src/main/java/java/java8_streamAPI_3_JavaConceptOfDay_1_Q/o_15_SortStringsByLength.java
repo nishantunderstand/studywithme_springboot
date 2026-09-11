@@ -10,15 +10,5 @@ public class o_15_SortStringsByLength {
 
     public static void main(String[] args) {
         List<String> listOfStrings = Arrays.asList("Java", "Python", "C#", "HTML", "Kotlin", "C++", "COBOL", "C");
-        System.out.println("====== Length : Ascending Order ======\n");
-        listOfStrings.stream()
-                .sorted(Comparator.comparing(String::length))
-                .forEach(System.out::println);
-
-
-        System.out.println("====== Length : Descending Order ======\n");
-        listOfStrings.stream()
-                .sorted(Comparator.comparing(String::length).reversed())
-                .forEach(System.out::println);
     }
 }

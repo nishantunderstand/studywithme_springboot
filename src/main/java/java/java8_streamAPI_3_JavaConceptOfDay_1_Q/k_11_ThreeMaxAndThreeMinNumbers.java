@@ -10,22 +10,5 @@ public class k_11_ThreeMaxAndThreeMinNumbers {
 
     public static void main(String[] args) {
         List<Integer> listOfIntegers = Arrays.asList(45, 12, 56, 15, 24, 75, 31, 89);
-        // listOfIntegers.stream().max(Integer::compare).limit(3).forEach(System.out::println); // WRONG
-        // listOfIntegers.stream().max(Integer::compare).limit(3).ifPresent(System.out::println); // WRONG
-
-        System.out.println("====== Comparator Approach Max ======\n");
-        listOfIntegers.stream()
-                .sorted(Comparator.reverseOrder())
-                .limit(3)
-                .forEach(System.out::println);
-
-        System.out.println("====== Comparator Ascending Order  ======\n");
-        listOfIntegers.stream()
-                .sorted()
-                .limit(3)
-                .forEach(System.out::println);
-
-
-
     }
 }

@@ -1,7 +1,5 @@
 package java.java8_streamAPI_2a_Instagram_Videos_Q;
 
-import java.time.LocalDate;
-import java.time.Month;
 
 public class EY_MonthDateYear {
     public static void main(String[] args) {
@@ -12,13 +10,6 @@ public class EY_MonthDateYear {
         String monthInput = "September";
         int year = 2025;
 
-        int day = Integer.parseInt(dayInput.replaceAll("\\D",""));
         // This will extract 1st
-
-        Month month = Month.valueOf(monthInput.toUpperCase());
-
-        LocalDate date = LocalDate.of(year,month,day);
-
-        System.out.println(date);
     }
 }

@@ -1,47 +1,13 @@
 package java.java8_streamAPI_1_BlogDev_Q;
 
-import java.util.*;
-import java.util.function.Function;
-import java.util.stream.Collectors;
+import java.util.List;
 
 /**
- * 19. How to find only duplicate elements with its count from the String ArrayList in Java8?
+ * 19. How to find only duplicate elements with its count from the String ArrayList in Java 8?
  */
 public class s_19_DuplicateElemenetCount {
     public static void main(String[] args) {
-        List<String> names = Arrays.asList("AA", "BB", "AA", "CC");
-
-        Map<String, Integer> namesCount = names.stream()
-                .collect(Collectors.groupingBy(
-                        Function.identity(),
-                        HashMap::new,
-                        Collectors.summingInt(e -> 1)
-                ));
-
-
-        // iterate over namesCount , Return the item whose values is greater than 1
-        namesCount.entrySet()
-                .stream()
-                .filter(e -> e.getValue() > 1l) //<--
-                .forEach(e ->
-                        System.out.println("Duplicate " + e.getKey() + " Count :" + e.getValue())
-                );
-
-        System.out.println("======WORKING=======");
-        System.out.println("====== Monday, August 17, 2026 11:41:14 PM ======\n");
-        names.stream()
-                .collect(Collectors.groupingBy(
-                        Function.identity(),
-                        LinkedHashMap::new,
-                        Collectors.counting()
-                ))
-                .entrySet()
-                .stream()
-                .filter(e -> e.getValue() > 1L) //<--
-                .forEach(e ->
-                        System.out.println("Duplicate : " + e.getKey() + " \t Count " + e.getValue())
-                );
+        List<Integer> myList = List.of(10, 15, 8, 49, 25, 98, 32, 16, 33, 10, 10, 10, 10, 11, 11, 11, 12, 12);
+        String input = "Java articles are Awesome Why Study and Pratice is Needed";
     }
 }
-
-

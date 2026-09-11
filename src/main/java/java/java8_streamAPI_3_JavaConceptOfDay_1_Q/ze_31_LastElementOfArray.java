@@ -12,20 +12,5 @@ public class ze_31_LastElementOfArray {
     public static void main(String[] args) {
         List<String> listOfStrings = Arrays.asList("One", "Two", "Three", "Four", "Five", "Six");
 
-        System.out.println("======  first Element ======");
-
-        listOfStrings.stream()
-                .findFirst()
-                .ifPresent(System.out::println);
-
-
-        System.out.println("======  Last  Element ======");
-
-        listOfStrings.stream()
-                .skip(listOfStrings.size()-1)
-                .findFirst()
-                .ifPresent(System.out::println);
-
-
     }
 }

@@ -1,9 +1,5 @@
 package java.java8_streamAPI_2_Interview_Q;
 
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-
 /**
  * Created : 2026-08-12 01:53:44
  *
@@ -24,20 +20,6 @@ public class Accenture_3_Nov202025_1_QuestionVariation {
         // Highest Word Frequency Excluding Space
         String input1 = "aa a a a a b b a a       a";
         String input = "aa a a a a b b a a c c c c c c c c c c      a";
-
-        input.chars()
-                .mapToObj(ch -> Character.toLowerCase((char)ch))
-                .filter(ch -> ch != ' ')
-                .collect(Collectors.groupingBy(
-                        Function.identity(),
-                        Collectors.counting()
-                ))
-                .entrySet()
-                .stream()
-                .skip(1)
-                .max(Map.Entry.comparingByValue())
-                .map(Map.Entry::getKey)
-                .ifPresent(System.out::println);
 
     }
 }

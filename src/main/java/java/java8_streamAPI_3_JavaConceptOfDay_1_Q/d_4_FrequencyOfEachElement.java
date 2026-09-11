@@ -14,11 +14,5 @@ public class d_4_FrequencyOfEachElement {
     public static void main(String[] args) {
         List<String> stationeryList = Arrays.asList("Pen", "Eraser", "Note Book", "Pen", "Pencil", "Stapler", "Note Book", "Pencil");
         // Split it then then Apply HashMap One , Then Print it
-        stationeryList.stream()
-                .collect(Collectors.groupingBy(
-                        Function.identity(),
-                        Collectors.counting()
-                )).forEach((k,v)-> System.out.println(k+"->"+v));
-
     }
 }

@@ -1,4 +1,4 @@
-package java.java8_streamAPI_4_JavaConceptOfDay_2_Q;
+package java.java8_streamAPI_4_JavaConceptOfDay_2_QA;
 
 import java.util.ArrayList;
 import java.util.List;

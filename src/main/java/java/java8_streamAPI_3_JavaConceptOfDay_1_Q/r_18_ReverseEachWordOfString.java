@@ -13,19 +13,5 @@ public class r_18_ReverseEachWordOfString {
     public static void main(String[] args) {
 
         String str = "Java Concept Of The Day";
-        System.out.println("======  Array Stream Spilit ======\n");
-        String res =Arrays.stream(str.split(" "))
-                                .map(word -> new StringBuilder(word).reverse().toString())
-                                        .collect(Collectors.joining(" "));
-        System.out.println("Result : "+ res);
-
-        System.out.println("======  Stream Spilit ======\n");
-        String resultNew =  Stream.of(str.split(" "))
-                .map(word -> new StringBuilder(word).reverse().toString())
-                .collect(Collectors.joining(" "));
-
-        System.out.println("resultNew : "+ resultNew);
-
-
     }
 }

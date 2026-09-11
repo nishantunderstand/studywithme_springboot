@@ -14,10 +14,5 @@ public class j_10_MergeTwoUnsortedArraysIntoSortedNoDuplicates {
         int[] a = new int[] {4, 2, 7, 1};
         int[] b = new int[] {8, 3, 9, 5};
 
-        IntStream.concat(Arrays.stream(a),Arrays.stream(b))
-                .sorted()
-                .distinct()
-                .forEach(System.out::println);
-
     }
 }

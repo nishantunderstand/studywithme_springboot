@@ -12,9 +12,5 @@ public class t_20_ReverseIntegerArray {
 
         // Fix: Convert IntStream to Stream<Integer> using boxed()
         int[] array = new int[] {5, 1, 7, 3, 9, 6};
-        Arrays.stream(array)
-                .boxed() //<--
-                .sorted(Comparator.reverseOrder())
-                .forEach(System.out::println);
     }
 }

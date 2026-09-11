@@ -15,12 +15,5 @@ public class y_25_ExtractDuplicateElements {
     public static void main(String[] args) {
 
         List<Integer> listOfIntegers = Arrays.asList(111, 222, 333, 111, 555, 333, 777, 222);
-        Set<Integer> seen = new HashSet<>();
-
-        System.out.println("====== Duplicate Element ======");
-        listOfIntegers.stream().filter(s -> !seen.add(s)).forEach(System.out::println);
-
-        System.out.println("====== Distinct Element ======");
-        listOfIntegers.stream().distinct().forEach(System.out::println);
     }
 }

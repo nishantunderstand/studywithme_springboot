@@ -1,7 +1,6 @@
 package java.java8_streamAPI_2a_Instagram_Videos_Q;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 // https://www.instagram.com/reel/DXA-FY8DIEe/
@@ -18,23 +17,6 @@ public class SecondHighestSalaryEmployee {
         );
 
         // You worked Only on Salary
-        Integer resSalary = employees.stream()
-                .map(Employee::getSalary)
-                .distinct()
-                .sorted(Comparator.reverseOrder())
-                .skip(1)
-                .findFirst()
-                .get();
-        System.out.println(resSalary);
-
-        Employee res = employees.stream()
-                .distinct()
-                .sorted(Comparator.comparing(Employee::getSalary).reversed())
-                .skip(1)
-                .findFirst()
-                .get();
-
-        System.out.println(res);
     }
 }
 
@@ -50,22 +32,4 @@ class Employee {
         this.salary = salary;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{id=" + id
-                + ", name='" + name + '\''
-                + ", salary=" + salary + '}';
-    }
 }

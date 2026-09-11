@@ -13,12 +13,5 @@ public class w_23a_PalindromeProgram {
 
         String str = "ROTATOR";
 
-        String reversed = IntStream.range(0,str.length())
-                .mapToObj(i -> String.valueOf(str.charAt(str.length()-1-i)))//<--
-                .collect(Collectors.joining(""));
-        System.out.println("====== Saturday, July 25, 2026 8:35:09 PM ======");
-        System.out.println("isPalindrome : "+  str==reversed);
-        System.out.println("isPalindrome : "+  str.equals(reversed));
-
     }
 }

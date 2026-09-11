@@ -1,26 +1,13 @@
 package java.java8_streamAPI_1_BlogDev_Q;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
- * Find Second Highest
+ * Find the second-highest element.
  */
 public class d_4a_FindSecondLargestElement {
-
     public static void main(String[] args) {
-        List<Integer> myList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
-        System.out.println("===== if Present ========");
-        System.out.println("====== Monday, August 17, 2026 8:24:12 PM ======\n");
-        myList.stream()
-                .distinct()
-                .sorted(Collections.reverseOrder()) // Approach 1
-                //.sorted(Comparator.reverseOrder()) // Approach 2
-                .skip(1)
-                .findFirst()
-                .ifPresent(System.out::println);
+        List<Integer> myList = List.of(10, 15, 8, 49, 25, 98, 32, 16, 33, 10, 10, 10, 10, 11, 11, 11, 12, 12);
+        String input = "Java articles are Awesome Why Study and Pratice is Needed";
     }
 }
-
-

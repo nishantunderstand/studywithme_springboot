@@ -13,19 +13,6 @@ public class zb_28_FirstNonRepeatedCharacter {
     public static void main(String[] args) {
         String inputString = "Java Concept Of The Day";
 
-        inputString.chars()
-                .mapToObj(ch -> Character.toLowerCase((char)ch))
-                .collect(Collectors.groupingBy(
-                        Function.identity(),
-                        LinkedHashMap::new,
-                        Collectors.counting()
-                ))
-                .entrySet()
-                .stream()
-                .filter(entry -> entry.getValue()==1L)
-                .map(entry -> entry.getKey())
-                .findFirst()
-                .ifPresent(System.out::println);
     }
 }
 

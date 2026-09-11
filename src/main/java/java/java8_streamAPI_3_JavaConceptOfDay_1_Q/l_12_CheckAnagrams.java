@@ -16,29 +16,5 @@ public class l_12_CheckAnagrams {
         String s1 = "RaceCar";
         String s2 = "CarRace";
 
-        boolean isAnagram = s1.length() == s2.length() &&
-                Arrays.equals(
-                        s1.toLowerCase().chars().sorted().toArray(),
-                        s2.toLowerCase().chars().sorted().toArray());
-
-        System.out.println("isAnagram : " + isAnagram);
-
-        System.out.println("======  Build 2 HashMap ======\n");
-        Map<Character, Long> smap1 = s1.chars()
-                .mapToObj(ch -> Character.toLowerCase((char)ch))
-                .collect(Collectors.groupingBy(
-                        Function.identity(),
-                        Collectors.counting()
-                ));
-
-        Map<Character, Long> smap2 = s2.chars()
-                .mapToObj(ch -> Character.toLowerCase((char)ch))
-                .collect(Collectors.groupingBy(
-                        Function.identity(),
-                        Collectors.counting()
-                ));
-
-
-        System.out.println("isAnagram by HashMap : "+ smap1.equals(smap2));
     }
 }

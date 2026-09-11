@@ -43,8 +43,5 @@ public class StreamMain {
 		// How to declare Stream
 
 		List<Integer> list1 = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
-		list1.stream().forEach(e->{
-			System.out.println("Current : "+e);
-		});
 	}
 }

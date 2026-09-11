@@ -11,8 +11,5 @@ public class b_2_RemoveDuplicateElements {
 
     public static void main(String[] args) {
         List<String> listOfStrings = Arrays.asList("Java", "Python", "C#", "Java", "Kotlin", "Python");
-        listOfStrings.stream().distinct().forEach(System.out::println);
-
-
     }
 }

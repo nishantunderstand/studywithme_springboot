@@ -1,6 +1,5 @@
 package java.java8_streamAPI_1_BlogDev_Q;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -8,13 +7,7 @@ import java.util.List;
  */
 public class n_14_PerformCube {
     public static void main(String[] args) {
-
-        List<Integer> myList = Arrays.asList(4, 5, 6, 7, 1, 2, 3);
-        myList.stream()
-                .map(n -> n * n * n)
-                .filter(n -> n > 50)
-                .forEach(e -> System.out.print(e + "\t"));
+        List<Integer> myList = List.of(10, 15, 8, 49, 25, 98, 32, 16, 33, 10, 10, 10, 10, 11, 11, 11, 12, 12);
+        String input = "Java articles are Awesome Why Study and Pratice is Needed";
     }
 }
-
-

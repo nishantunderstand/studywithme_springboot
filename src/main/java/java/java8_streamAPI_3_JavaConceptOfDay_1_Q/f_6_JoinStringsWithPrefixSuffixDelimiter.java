@@ -13,11 +13,6 @@ public class f_6_JoinStringsWithPrefixSuffixDelimiter {
     public static void main(String[] args) {
 
         List<String> listOfStrings = Arrays.asList("Facebook", "Twitter", "YouTube", "WhatsApp", "LinkedIn");
-        String res = listOfStrings.stream().collect(
-                Collectors.joining(" ","[","]")
-        );
         // Delimeter, Prefix, Suffix
-        System.out.println("Result : "+ res);
-
     }
 }

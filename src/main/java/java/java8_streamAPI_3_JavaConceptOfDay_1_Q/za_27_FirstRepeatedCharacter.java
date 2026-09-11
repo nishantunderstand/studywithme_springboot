@@ -14,19 +14,6 @@ public class za_27_FirstRepeatedCharacter {
         String inputString = "Java Concept Of The Day";
         // Build LinkedHasMap , Return that Element
 
-        inputString.chars()
-                .mapToObj(ch -> Character.toLowerCase((char)ch))
-                .collect(Collectors.groupingBy(
-                        Function.identity(),
-                        LinkedHashMap::new,
-                        Collectors.counting()
-                ))
-                .entrySet()
-                .stream()
-                .filter(entry -> entry.getValue()>1L)
-                .map(entry -> entry.getKey())
-                .findFirst()
-                .ifPresent(System.out::println);
     }
 }
 

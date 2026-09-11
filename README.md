@@ -12,3 +12,9 @@ Please Note : Nowadays Java21 is Current Global Standard as of now.
 
 
 - [Programmiz-Java-Complier](https://www.programiz.com/java-programming/online-compiler/)
+
+
+
+Promopt For ChatGPT Codex.
+I’m retaining each class, main method, input data, and explanatory comments; 
+I’ll remove stream pipelines, loops, helper implementations, and result-printing statements.
