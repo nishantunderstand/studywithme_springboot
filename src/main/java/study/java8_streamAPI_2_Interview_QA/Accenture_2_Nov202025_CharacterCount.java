@@ -7,7 +7,7 @@ import java.util.stream.*;
 import java.util.function.*;
 
 
-class Accenture_2_Nov202025 {
+class Accenture_2_Nov202025_CharacterCount {
     public static void main(String[] args) {
         String str = "Hello World";
         System.out.println("String: " + str);

@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * Nov 20,2025
  */
-public class Accenture_1_Nov202025 {
+public class Accenture_1_Nov202025_PrintHashMap {
   public static void main(String[] args) {
 
     List<Integer> myList = Arrays.asList(1,2,3,4,5,6,7,8,9,1);

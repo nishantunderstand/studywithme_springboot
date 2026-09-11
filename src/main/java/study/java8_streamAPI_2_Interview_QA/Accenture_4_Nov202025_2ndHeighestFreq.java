@@ -30,3 +30,6 @@ public class Accenture_4_Nov202025_2ndHeighestFreq {
 
     }
 }
+
+
+// Q: Can i apply max then skip 1 will it work ??
