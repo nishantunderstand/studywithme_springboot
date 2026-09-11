@@ -15,7 +15,7 @@ Please Note : Nowadays Java21 is Current Global Standard as of now.
 
 
 ```
-Promopt For ChatGPT Codex.
+Prompt For ChatGPT Codex.
 I’m retaining each class, main method, input data, and explanatory comments; 
 I’ll remove stream pipelines, loops, helper implementations, and result-printing statements.
 ```
