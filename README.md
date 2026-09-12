@@ -1,6 +1,5 @@
 Level 1 : Beginner Level Code
 CRUD + MySystem MySQL Setup
-
 Project Structure Tree
 
 
