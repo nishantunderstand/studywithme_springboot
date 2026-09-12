@@ -22,8 +22,6 @@ public class StudentController {
                 .ok(studentService.getStudentById(id));
     }
 
-    // -----------------------------------------------------------------
-
     // Delete : 204
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteStudent(@PathVariable Long id) { //<--
