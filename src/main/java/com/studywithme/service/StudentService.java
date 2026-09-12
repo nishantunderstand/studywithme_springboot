@@ -46,11 +46,21 @@ public class StudentService {
 
 
 
+    // DELETE /students/{id}
+    public void deleteStudent(Long id) {
+        Student student = studentRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
+        studentRepository.delete(student);
+    }
+
+
+
     // GET /students
     public List<StudentResponse> getAllStudents() {
         List<Student> students = studentRepository.findAll();
 
         List<StudentResponse> responses = new ArrayList<>();
+        // Why Iterate Over Result Obtained from Repo ?
 
         for (Student student : students) {
             StudentResponse response = new StudentResponse(); //<--
@@ -72,13 +82,14 @@ public class StudentService {
 
    // POST /students
     public StudentResponse createStudent(StudentRequest request) {
-
+        // Setting the Data
         Student student = new Student();
         student.setName(request.getName());
         student.setEmail(request.getEmail());
 
         Student savedStudent = studentRepository.save(student);
 
+        // Entity -> DTO
         StudentResponse response = new StudentResponse();
         response.setStudentId(savedStudent.getStudentId());
         response.setName(savedStudent.getName());
@@ -106,20 +117,6 @@ public class StudentService {
         return response;
     }
 
-
-
-
-
-    // DELETE /students/{id}
-    public void deleteStudent(Long id) {
-        Student student = studentRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
-        studentRepository.delete(student);
-    }
-
-
-
-
     // PATCH /students/{id}
     public StudentResponse patchStudent(Long id, StudentRequest request) {
 
@@ -137,6 +134,7 @@ public class StudentService {
         }
 
         Student updatedStudent = studentRepository.save(student);
+
 
         // Create Response
         StudentResponse response = new StudentResponse();

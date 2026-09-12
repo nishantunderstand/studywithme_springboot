@@ -18,21 +18,19 @@ public class StudentController {
     // Get-1 : 200
     @GetMapping("/{id}")
     public ResponseEntity<StudentResponse> getStudentById(@PathVariable Long id) {
-        return ResponseEntity.ok(studentService.getStudentById(id));
+        return ResponseEntity
+                .ok(studentService.getStudentById(id));
     }
 
     // -----------------------------------------------------------------
 
     // Delete : 204
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteStudent(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteStudent(@PathVariable Long id) { //<--
         studentService.deleteStudent(id); //<--
-        return ResponseEntity.noContent().build(); //<--
+        return ResponseEntity
+                .noContent().build(); //<--
     }
-
-
-
-
 
 
     // -----------------------------------------------------------------
@@ -41,7 +39,8 @@ public class StudentController {
     // Get-All : 200
     @GetMapping
     public ResponseEntity<List<StudentResponse>> getAllStudents() {
-        return ResponseEntity.ok(studentService.getAllStudents());
+        return ResponseEntity
+                .ok(studentService.getAllStudents());
     }
 
     // -----------------------------------------------------------------
@@ -51,8 +50,10 @@ public class StudentController {
 
     // POST : 201
     @PostMapping
-    public ResponseEntity<StudentResponse> createStudentv2(@RequestBody StudentRequest request) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(studentService.createStudent(request));
+    public ResponseEntity<StudentResponse> createStudent(@RequestBody StudentRequest request) {
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(studentService.createStudent(request));
     }
 
 
@@ -62,7 +63,8 @@ public class StudentController {
     // 200
     @PutMapping("/{id}")
     public ResponseEntity<StudentResponse> updateStudent(@PathVariable Long id,@RequestBody StudentRequest request) {
-        return ResponseEntity.ok(studentService.updateStudent(id, request));
+        return ResponseEntity
+                .ok(studentService.updateStudent(id, request));
     }
 
 
@@ -72,7 +74,8 @@ public class StudentController {
     // 200
     @PatchMapping("/{id}")
     public ResponseEntity<StudentResponse> patchStudent(@PathVariable Long id,@RequestBody StudentRequest request){
-        return ResponseEntity.ok(studentService.patchStudent(id, request)
+        return ResponseEntity
+                .ok(studentService.patchStudent(id, request)
         );
     }
 }

@@ -28,7 +28,6 @@ What is the difference between ok and Status 🤔🤔🤔?
 Factory Method of ResponseEntity
 
 
-
 ResponseEntity
 |
 |
